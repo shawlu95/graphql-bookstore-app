@@ -65,6 +65,17 @@ Use **Graphical** to test out graph query:
 }
 ```
 
+#### Mutation
+
+```javascript
+// add author and return the newly created author
+mutation {
+  addAuthor(name: "Ron Chernow", age: 73) {
+    name, age
+  }
+}
+```
+
 **GraphQLID** is a preferred way of id-stamping object.
 
 - can query ID as integer
