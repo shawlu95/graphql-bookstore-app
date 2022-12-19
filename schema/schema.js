@@ -7,6 +7,7 @@ const {
   GraphQLString,
   GraphQLInt,
   GraphQLSchema,
+  GraphQLList,
 } = graphql;
 
 var books = [
@@ -21,6 +22,8 @@ var authors = [
   { name: 'Peter Thiel', age: 55, id: '3' },
 ];
 
+// nit: field is passed in as a function so it won't get
+// immediately executed upon file load
 const BookType = new GraphQLObjectType({
   name: 'Book',
   fields: () => ({
@@ -42,6 +45,12 @@ const AuthorType = new GraphQLObjectType({
     id: { type: GraphQLID },
     name: { type: GraphQLString },
     age: { type: GraphQLInt },
+    books: {
+      type: GraphQLList(BookType),
+      resolve(parent, args) {
+        return _.filter(books, { authorId: parent.id });
+      },
+    },
   }),
 });
 

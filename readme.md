@@ -34,6 +34,15 @@ Use **Graphical** to test out graph query:
     }
   }
 }
+
+// find ALL books of a given author
+{
+  author(id: "2") {
+    id, name, age, books {
+      id, name, genre
+    }
+  }
+}
 ```
 
 **GraphQLID** is a preferred way of id-stamping object.
