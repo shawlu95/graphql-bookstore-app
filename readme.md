@@ -43,6 +43,26 @@ Use **Graphical** to test out graph query:
     }
   }
 }
+
+// return all book names and author names
+{
+  books {
+    name
+  },
+  authors {
+    name
+  }
+}
+
+// return all authors, and all books of each author
+{
+  authors {
+    name,
+    books {
+      name
+    }
+  }
+}
 ```
 
 **GraphQLID** is a preferred way of id-stamping object.
