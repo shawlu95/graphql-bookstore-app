@@ -74,6 +74,36 @@ mutation {
     name, age
   }
 }
+
+mutation {
+  addAuthor(name: "Margaret Mitchell", age: 122) {
+    name, age
+  }
+}
+
+mutation {
+  addAuthor(name: "Peter Thiel", age: 55) {
+    name, age
+  }
+}
+
+mutation {
+  addBook(name: "The House of Morgan", genre: "History", authorId: "63a0bdfeb2e9dcbfe2651a98") {
+    name, genre
+  }
+}
+
+mutation {
+  addBook(name: "Gone with the Wind", genre: "Fiction", authorId: "63a0be404a72e1ab6412a04a") {
+    name, genre
+  }
+}
+
+mutation {
+  addBook(name: "Zero to One", genre: "Nonfiction", authorId: "63a0be4e4a72e1ab6412a04c") {
+    name, genre
+  }
+}
 ```
 
 **GraphQLID** is a preferred way of id-stamping object.
